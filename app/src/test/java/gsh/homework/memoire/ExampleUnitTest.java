@@ -1,4 +1,4 @@
-package fun.zzti.memoire;
+package gsh.homework.memoire;
 
 import org.junit.Test;
 

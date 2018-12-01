@@ -1,4 +1,4 @@
-package fun.zzti.memoire;
+package gsh.homework.memoire;
 
 
 import android.annotation.SuppressLint;
@@ -22,18 +22,10 @@ import android.support.v7.app.AlertDialog;
 import java.util.ArrayList;
 import java.util.List;
 
-import fun.zzti.memoire.database.MyDB;
-import fun.zzti.memoire.enity.Record;
+import gsh.homework.memoire.database.MyDB;
+import gsh.homework.memoire.enity.Record;
 
 
-/**
- * create_by Android Studio
- *
- * @author zouguo0212@
- * @package_name fun.zzti
- * @description
- * @date 2018/10/26 17:30
- */
 public class MainActivity extends BaseActivity implements View.OnClickListener,
         AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener{
 
@@ -82,10 +74,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
         }
         cursor.close();
         db.close();
-        // 创建一个Adapter的实例
         myBaseAdapter = new MyBaseAdapter(this,recordList,R.layout.list_item);
         myListView.setAdapter(myBaseAdapter);
-        // 设置点击监听
         myListView.setOnItemClickListener(this);
         myListView.setOnItemLongClickListener(this);
     }
@@ -159,11 +149,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
 
 
 
-    /**
-     * ListView展示的适配器类
-     */
+
     class MyBaseAdapter extends BaseAdapter{
-        private List<Record> recordList;//数据集合
+        private List<Record> recordList;
         private Context context;
         private int layoutId;
 
@@ -216,10 +204,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
             }
             String tile = recordList.get(position).getTitleName();
             viewHolder.titleView.setText((position+1)+"."+(tile.length()>7?tile.substring(0,7)+"...":tile));
-//            viewHolder.titleView.setText(tile);
             String body = recordList.get(position).getTextBody();
             viewHolder.bodyView.setText(body.length()>13?body.substring(0,12)+"...":body);
-//            viewHolder.bodyView.setText(body);
             viewHolder.timeView.setText(recordList.get(position).getCreateTime());
             return convertView;
         }

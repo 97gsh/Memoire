@@ -1,4 +1,4 @@
-package fun.zzti.memoire;
+package gsh.homework.memoire;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -17,17 +17,9 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import fun.zzti.memoire.database.MyDB;
-import fun.zzti.memoire.enity.Record;
+import gsh.homework.memoire.database.MyDB;
+import gsh.homework.memoire.enity.Record;
 
-/**
- * create_by Android Studio
- *
- * @author zouguo0212@
- * @package_name fun.zzti
- * @description
- * @date 2018/10/27 13:20
- */
 public class AmendActivity extends BaseActivity implements View.OnClickListener{
 
     MyDB myDB;
@@ -146,12 +138,7 @@ public class AmendActivity extends BaseActivity implements View.OnClickListener{
         return flag;
     }
 
-    /*
-     * 弹窗函数
-     * @param title
-     * @param body
-     * @param createDate
-     */
+
     void showDialog(final String body){
         dialog = new AlertDialog.Builder(AmendActivity.this);
         dialog.setTitle("提示");

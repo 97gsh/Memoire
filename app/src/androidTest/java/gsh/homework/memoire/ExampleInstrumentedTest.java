@@ -1,4 +1,4 @@
-package fun.zzti.memoire;
+package gsh.homework.memoire;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("fun.zzti.memoire", appContext.getPackageName());
+        assertEquals("gsh.homework.memoire", appContext.getPackageName());
     }
 }

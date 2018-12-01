@@ -1,4 +1,4 @@
-package fun.zzti.memoire;
+package gsh.homework.memoire;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -17,16 +17,9 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import fun.zzti.memoire.database.MyDB;
+import gsh.homework.memoire.database.MyDB;
 
-/**
- * create_by Android Studio
- *
- * @author zouguo0212@
- * @package_name fun.zzti
- * @description
- * @date 2018/10/26 17:30
- */
+
 public class EditActivity extends BaseActivity implements View.OnClickListener{
 
     MyDB myDB;
@@ -95,9 +88,7 @@ public class EditActivity extends BaseActivity implements View.OnClickListener{
         }
     }
 
-    /*
-     * 初始化函数
-     */
+
     void init(){
         myDB = new MyDB(this);
         btnBack = findViewById(R.id.button_back);
@@ -110,18 +101,14 @@ public class EditActivity extends BaseActivity implements View.OnClickListener{
         btnBack.setOnClickListener(this);
     }
 
-    /*
-     * 返回主界面
-     */
+
     void intentStart(){
         Intent intent = new Intent(EditActivity.this,MainActivity.class);
         startActivity(intent);
         this.finish();
     }
 
-    /*
-     * 保存函数
-     */
+
     boolean saveFunction(String title,String body,String createDate){
 
         SQLiteDatabase db;
@@ -158,12 +145,7 @@ public class EditActivity extends BaseActivity implements View.OnClickListener{
         return flag;
     }
 
-    /*
-     * 弹窗函数
-     * @param title
-     * @param body
-     * @param createDate
-     */
+
     void showDialog(final String title, final String body, final String createDate){
         dialog = new AlertDialog.Builder(EditActivity.this);
         dialog.setTitle("提示");
@@ -199,10 +181,7 @@ public class EditActivity extends BaseActivity implements View.OnClickListener{
         }
     }
 
-    /*
-     * 得到当前时间
-     * @return
-     */
+
     String getNowTime(){
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
